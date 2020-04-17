@@ -1,1 +1,1 @@
-web : gunicorn Business_list.wsgi
+web : gunicorn Business_list.wsgi --log-file -
