@@ -1,0 +1,1 @@
+web : gunicorn Business_list.wsgi
