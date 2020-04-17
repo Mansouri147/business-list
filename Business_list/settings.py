@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', "default_value")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG", False))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['business-list.herokuapp.com']
 
 
 # Application definition
@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = (os.path.join(BASE_DIR, 'static'),)
 
 STATICSTORAGE = "Whitenoise.storage.CompressedManifestStaticFilesStorage"
-
+"""
 if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -132,6 +132,6 @@ if os.getcwd() == '/app':
     DEBUG = True
 
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+"""
 django_heroku.settings(locals())
 
