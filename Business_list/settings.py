@@ -25,7 +25,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY', "default_value")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get("DEBUG", False))
 
 ALLOWED_HOSTS = []
 
@@ -124,6 +124,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = (os.path.join(BASE_DIR, 'static'),)
 
 STATICSTORAGE = "Whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {"console": {"class": "logging.StreamHandler"}},
+    "loggers": {
+        "": {"handlers": ["console"], "level": "INFO"},
+        "django": {"handlers": ["console"], "level": "INFO"},
+    },
+}
 
 django_heroku.settings(locals())
 
