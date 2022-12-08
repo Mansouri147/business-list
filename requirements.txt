@@ -1,7 +1,7 @@
 asgiref==3.2.7
 beautifulsoup4==4.9.0
 bs4==0.0.1
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 dj-database-url==0.5.0
 dj-static==0.0.6
